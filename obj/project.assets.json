@@ -5947,11 +5947,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Milica\\Desktop\\Odnesi\\Odnesi.csproj",
+      "projectUniqueName": "C:\\Users\\Milica\\Desktop\\Odnesi1\\Odnesi.csproj",
       "projectName": "Odnesi",
-      "projectPath": "C:\\Users\\Milica\\Desktop\\Odnesi\\Odnesi.csproj",
+      "projectPath": "C:\\Users\\Milica\\Desktop\\Odnesi1\\Odnesi.csproj",
       "packagesPath": "C:\\Users\\Milica\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Milica\\Desktop\\Odnesi\\obj\\",
+      "outputPath": "C:\\Users\\Milica\\Desktop\\Odnesi1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Milica\\AppData\\Roaming\\NuGet\\NuGet.Config",
