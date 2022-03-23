@@ -323,6 +323,7 @@ export class Market{
                 body:JSON.stringify(prodavnica1)
             }).then( p => {
                 alert("Dodali ste prodavnicu: "+prodavnica);
+                location.reload();
             })
         }
         else{
@@ -347,6 +348,7 @@ export class Market{
                 body:JSON.stringify(prodavnica1)
             }).then( b => {
                 alert("Izmenili ste prodavnicu: "+ stariNaziv+" u: "+prodavnica);
+                location.reload();
             })
         }
         else{
