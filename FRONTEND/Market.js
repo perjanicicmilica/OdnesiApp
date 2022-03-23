@@ -34,7 +34,8 @@ export class Market{
         let iz;
         let izbrisiBtn;
         let adminNas;
-
+        let labelPom;
+        let labelPom1;
         adminKont = document.createElement("div");
         adminKont.className = "adminKont";
         adminNas = document.createElement("h1");
@@ -55,12 +56,16 @@ export class Market{
 
         izmeniKont = document.createElement("div");
         izmeniKont.className = "izmeniKont";
+        labelPom = document.createElement("label");
         izmeniSel = document.createElement("select");
         izmeniSel.className = "izmeniProd";
         this.listaProdavnica.forEach(p=>{
             iz = document.createElement("option");
             iz.innerHTML = p.naziv;
             iz.value = p.id;
+            labelPom.value = p.naziv;
+            labelPom.id = p.id;
+            izmeniSel.appendChild(labelPom);
             izmeniSel.appendChild(iz);
         })
         izmeniInput = document.createElement("input");
@@ -76,12 +81,16 @@ export class Market{
 
         izbrisiKont = document.createElement("div");
         izbrisiKont.className = "izbrisiKont";
+        labelPom1 = document.createElement("label");
         izbrisiSel = document.createElement("select");
         izbrisiSel.className = "izbrisiProd";
         this.listaProdavnica.forEach(p=>{
             iz = document.createElement("option");
             iz.innerHTML = p.naziv;
             iz.value = p.id;
+            labelPom1.value = p.naziv;
+            labelPom1.id = p.id+"iz";
+            izbrisiSel.appendChild(labelPom1)
             izbrisiSel.appendChild(iz);
         })
         izbrisiBtn = document.createElement("button");
@@ -313,7 +322,7 @@ export class Market{
                 },
                 body:JSON.stringify(prodavnica1)
             }).then( p => {
-                alert("Dodali ste prodavnicu");
+                alert("Dodali ste prodavnicu: "+prodavnica);
             })
         }
         else{
@@ -329,6 +338,7 @@ export class Market{
             "adresa": "adresa"}
         let optionEl = this.kont.querySelector(".izmeniProd");
         var prodavnicaId = optionEl.options[optionEl.selectedIndex].value;
+        let stariNaziv = document.getElementById(prodavnicaId).value;
         fetch("https://localhost:5001/Prodavnica/Izmeni Prodavnicu?IdProdavnice="+prodavnicaId,{
                 method:"PUT",
                 headers:{
@@ -336,7 +346,7 @@ export class Market{
                 },
                 body:JSON.stringify(prodavnica1)
             }).then( b => {
-                alert("Izmenili ste prodavnicu");
+                alert("Izmenili ste prodavnicu: "+ stariNaziv+" u: "+prodavnica);
             })
         }
         else{
@@ -347,10 +357,12 @@ export class Market{
     obrisiProdavnicu(){
         let optionEl = this.kont.querySelector(".izbrisiProd");
         var prodavnicaId = optionEl.options[optionEl.selectedIndex].value;
+        var starId = prodavnicaId+"iz";
+        let stariNaziv = document.getElementById(starId).value;
         fetch("https://localhost:5001/Prodavnica/Izbrisi?id="+prodavnicaId, {
             method: 'DELETE',
             }).then(p=>{
-                alert("Izbrisali ste prodavnicu");
+                alert("Izbrisali ste prodavnicu: "+stariNaziv);
             })
     }
 }
