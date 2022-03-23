@@ -1,0 +1,18 @@
+<script>
+
+fetch("https://localhost:5001/Prodavnica/ProdavnicePoKategorijama")
+{
+ method: "GET",
+ headers: {
+	"Content-Type": "application/json"
+}}
+.then(p => {
+    p.json().then(data => {
+				
+			});
+		});
+</script>
+
+<body>
+<p id="myList"></p>
+<body>
